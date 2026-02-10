@@ -1,0 +1,242 @@
+.cp-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cp-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.cp-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  z-index: 10;
+  gap: 15px;
+}
+
+.cp-overlay-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #667eea;
+  border-radius: 50%;
+  animation: cp-spin 1s linear infinite;
+}
+
+@keyframes cp-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cp-overlay-text {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cp-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2d3748;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.cp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cp-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.cp-input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  transition: all 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.cp-input:focus {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.cp-content-row {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+}
+
+.cp-textarea {
+  flex: 1;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  transition: all 0.2s;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.cp-textarea:focus {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.cp-quote-btn {
+  cursor: pointer;
+  padding: 12px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.cp-quote-btn:hover:not(:disabled) {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+.cp-quote-btn:disabled {
+  cursor: not-allowed;
+}
+
+.cp-grid-row {
+  display: flex;
+  gap: 20px;
+}
+
+.cp-grid-item {
+  flex: 1;
+}
+
+.cp-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.cp-select:focus {
+  border-color: #667eea;
+}
+
+.cp-btn-row {
+  margin-top: 20px;
+  border-top: 1px solid #edf2f7;
+  padding-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.cp-btn-cancel {
+  padding: 12px 24px;
+  background: white;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.cp-btn-cancel:hover {
+  background: #f7fafc;
+}
+
+.cp-btn-submit {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.2s;
+}
+
+.cp-btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.cp-btn-submit:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .cp-container {
+    padding: 20px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .cp-grid-row {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .cp-btn-row {
+    flex-direction: column-reverse;
+  }
+
+  .cp-btn-row button {
+    width: 100%;
+  }
+}
